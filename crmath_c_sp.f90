@@ -28,6 +28,16 @@ contains
 
   !****
 
+  elemental complex(SP) function log1p_c_sp_ (x) result (log1p_x)
+
+    complex(SP), intent(in) :: x
+
+    log1p_x = CMPLX(log1p(CMPLX(x, KIND=DP)), KIND=SP)
+
+  end function log1p_c_sp_
+
+  !****
+
   elemental complex(SP) function exp_c_sp_ (x) result (exp_x)
 
     complex(SP), intent(in) :: x
@@ -35,6 +45,16 @@ contains
     exp_x = CMPLX(exp(CMPLX(x, KIND=DP)), KIND=SP)
 
   end function exp_c_sp_
+
+  !****
+
+  elemental complex(SP) function expm1_c_sp_ (x) result (expm1_x)
+
+    complex(SP), intent(in) :: x
+
+    expm1_x = CMPLX(expm1(CMPLX(x, KIND=DP)), KIND=SP)
+
+  end function expm1_c_sp_
 
   !****
 

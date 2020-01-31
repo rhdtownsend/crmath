@@ -23,6 +23,16 @@ submodule (crmath) crmath_r_dp
        real(C_DOUBLE), value, intent(in) :: x
      end function log_rz
 
+     pure real(C_DOUBLE) function log1p_rz (x) result (log1p_x) bind (C)
+       use ISO_C_BINDING
+       real(C_DOUBLE), value, intent(in) :: x
+     end function log1p_rz
+
+     pure real(C_DOUBLE) function log2_rz (x) result (log2_x) bind (C)
+       use ISO_C_BINDING
+       real(C_DOUBLE), value, intent(in)  :: x
+     end function log2_rz
+
      pure real(C_DOUBLE) function log10_rz (x) result (log10_x) bind (C)
        use ISO_C_BINDING
        real(C_DOUBLE), value, intent(in) :: x
@@ -32,6 +42,11 @@ submodule (crmath) crmath_r_dp
        use ISO_C_BINDING
        real(C_DOUBLE), value, intent(in) :: x
      end function exp_rd
+
+     pure real(C_DOUBLE) function expm1_rz (x) result (expm1_x) bind (C)
+       use ISO_C_BINDING
+       real(C_DOUBLE), value, intent(in) :: x
+     end function expm1_rz
 
      pure real(C_DOUBLE) function cos_rz (x) result (cos_x) bind (C)
        use ISO_C_BINDING
@@ -119,6 +134,26 @@ contains
 
   !****
 
+  elemental real(DP) function log1p_r_dp_ (x) result (log1p_x)
+
+    real(DP), intent(in) :: x
+
+    log1p_x = log1p_rz(x)
+
+  end function log1p_r_dp_
+
+  !****
+
+  elemental real(DP) function log2_r_dp_ (x) result (log2_x)
+
+    real(DP), intent(in) :: x
+
+    log2_x = log2_rz(x)
+
+  end function log2_r_dp_
+
+  !****
+
   elemental real(DP) function log10_r_dp_ (x) result (log10_x)
 
     real(DP), intent(in) :: x
@@ -136,6 +171,16 @@ contains
     exp_x = exp_rd(x)
 
   end function exp_r_dp_
+
+  !****
+
+  elemental real(DP) function expm1_r_dp_ (x) result (expm1_x)
+
+    real(DP), intent(in) :: x
+
+    expm1_x = expm1_rz(x)
+
+  end function expm1_r_dp_
 
   !****
 

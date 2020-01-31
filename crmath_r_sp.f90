@@ -28,6 +28,26 @@ contains
 
   !****
 
+  elemental real(SP) function log1p_r_sp_ (x) result (log1p_x)
+
+    real(SP), intent(in) :: x
+
+    log1p_x = REAL(log1p(REAL(x, DP)), SP)
+
+  end function log1p_r_sp_
+
+  !****
+
+  elemental real(SP) function log2_r_sp_ (x) result (log2_x)
+
+    real(SP), intent(in) :: x
+
+    log2_x = REAL(log2(REAL(x, DP)), SP)
+
+  end function log2_r_sp_
+
+  !****
+
   elemental real(SP) function log10_r_sp_ (x) result (log10_x)
 
     real(SP), intent(in) :: x
@@ -45,6 +65,16 @@ contains
     exp_x = REAL(exp(REAL(x, DP)), SP)
 
   end function exp_r_sp_
+
+  !****
+
+  elemental real(SP) function expm1_r_sp_ (x) result (expm1_x)
+
+    real(SP), intent(in) :: x
+
+    expm1_x = REAL(expm1(REAL(x, DP)), SP)
+
+  end function expm1_r_sp_
 
   !****
 

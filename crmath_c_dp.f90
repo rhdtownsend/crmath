@@ -28,6 +28,20 @@ contains
 
   !****
 
+  elemental complex(DP) function log1p_c_dp_ (x) result (log1p_x)
+
+    complex(DP), intent(in) :: x
+
+    complex(DP) :: x1p
+
+    x1p = x + 1._DP
+
+    log1p_x = CMPLX(log(abs(x1p)), atan2(x1p%im, x1p%re), DP)
+
+  end function log1p_c_dp_
+
+  !****
+
   elemental complex(DP) function exp_c_dp_ (x) result (exp_x)
 
     complex(DP), intent(in) :: x
@@ -35,6 +49,16 @@ contains
     exp_x = exp(x%re)*CMPLX(cos(x%im), sin(x%im), DP)
 
   end function exp_c_dp_
+
+  !****
+
+  elemental complex(DP) function expm1_c_dp_ (x) result (expm1_x)
+
+    complex(DP), intent(in) :: x
+
+    expm1_x = exp(x) - 1._DP
+
+  end function expm1_c_dp_
 
   !****
 

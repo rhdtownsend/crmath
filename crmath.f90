@@ -55,6 +55,34 @@ module crmath
        complex(DP), intent(in) :: x
      end function log_c_dp_
 
+     ! log1p
+
+     elemental real(SP) module function log1p_r_sp_ (x)
+       real(SP), intent(in) :: x
+     end function log1p_r_sp_
+
+     elemental complex(SP) module function log1p_c_sp_ (x)
+       complex(SP), intent(in) :: x
+     end function log1p_c_sp_
+
+     elemental real(DP) module function log1p_r_dp_ (x)
+       real(DP), intent(in) :: x
+     end function log1p_r_dp_
+
+     elemental complex(DP) module function log1p_c_dp_ (x)
+       complex(DP), intent(in) :: x
+     end function log1p_c_dp_
+
+     ! log2
+
+     elemental real(SP) module function log2_r_sp_ (x)
+       real(SP), intent(in) :: x
+     end function log2_r_sp_
+
+     elemental real(DP) module function log2_r_dp_ (x)
+       real(DP), intent(in) :: x
+     end function log2_r_dp_
+
      ! log10
 
      elemental real(SP) module function log10_r_sp_ (x)
@@ -82,6 +110,24 @@ module crmath
      elemental complex(DP) module function exp_c_dp_ (x)
        complex(DP), intent(in) :: x
      end function exp_c_dp_
+
+     ! expm1
+
+     elemental real(SP) module function expm1_r_sp_ (x)
+       real(SP), intent(in) :: x
+     end function expm1_r_sp_
+
+     elemental complex(SP) module function expm1_c_sp_ (x)
+       complex(SP), intent(in) :: x
+     end function expm1_c_sp_
+
+     elemental real(DP) module function expm1_r_dp_ (x)
+       real(DP), intent(in) :: x
+     end function expm1_r_dp_
+
+     elemental complex(DP) module function expm1_c_dp_ (x)
+       complex(DP), intent(in) :: x
+     end function expm1_c_dp_
 
      ! sqrt
 
@@ -496,6 +542,18 @@ module crmath
      module procedure log_c_dp_
   end interface cdlog
 
+  interface log1p
+     module procedure log1p_r_sp_
+     module procedure log1p_c_sp_
+     module procedure log1p_r_dp_
+     module procedure log1p_c_dp_
+  end interface log1p
+
+  interface log2
+     module procedure log2_r_sp_
+     module procedure log2_r_dp_
+  end interface log2
+
   interface log10
      module procedure log10_r_sp_
      module procedure log10_r_dp_
@@ -527,6 +585,13 @@ module crmath
   interface cdexp
      module procedure exp_c_dp_
   end interface cdexp
+
+  interface expm1
+     module procedure expm1_r_sp_
+     module procedure expm1_c_sp_
+     module procedure expm1_r_dp_
+     module procedure expm1_c_dp_
+  end interface expm1
 
   interface sqrt
      module procedure sqrt_c_sp_
