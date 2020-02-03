@@ -847,9 +847,12 @@ module crmath
   public :: clog
   public :: dlog
   public :: cdlog
+  public :: log1p
+  public :: log2
   public :: log10
   public :: dlog10
   public :: exp
+  public :: expm1
   public :: cexp
   public :: dexp
   public :: cdexp
