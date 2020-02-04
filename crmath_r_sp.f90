@@ -94,7 +94,15 @@ contains
     real(SP), intent(in) :: x
     real(SP), intent(in) :: y
 
-    hypot_xy = REAL(hypot(REAL(x, DP), REAL(y, DP)), SP)
+    if (ABS(x) > ABS(y)) then
+       hypot_xy = ABS(x)*SQRT(1._SP + (y/x)**2)
+    else
+       if (ABS(y) == 0._SP) then
+          hypot_xy = 0._SP
+       else
+          hypot_xy = ABS(y)*SQRT(1._SP + (x/y)**2)
+       endif
+    endif
 
   end function hypot_r_r_sp_
 
