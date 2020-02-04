@@ -139,48 +139,6 @@ module crmath
        complex(DP), intent(in) :: x
      end function sqrt_c_dp_
 
-     ! pow
-
-     elemental real(SP) module function pow_r_r_sp_ (x, y)
-       real(SP), intent(in) :: x
-       real(SP), intent(in) :: y
-     end function pow_r_r_sp_
-
-     elemental complex(SP) module function pow_r_c_sp_ (x, y)
-       real(SP), intent(in)    :: x
-       complex(SP), intent(in) :: y
-     end function pow_r_c_sp_
-
-     elemental complex(SP) module function pow_c_r_sp_ (x, y)
-       complex(SP), intent(in) :: x
-       real(SP), intent(in)    :: y
-     end function pow_c_r_sp_
-
-     elemental complex(SP) module function pow_c_c_sp_ (x, y)
-       complex(SP), intent(in) :: x
-       complex(SP), intent(in) :: y
-     end function pow_c_c_sp_
-
-     elemental real(DP) module function pow_r_r_dp_ (x, y)
-       real(DP), intent(in) :: x
-       real(DP), intent(in) :: y
-     end function pow_r_r_dp_
-
-     elemental complex(DP) module function pow_r_c_dp_ (x, y)
-       real(DP), intent(in)    :: x
-       complex(DP), intent(in) :: y
-     end function pow_r_c_dp_
-
-     elemental complex(DP) module function pow_c_r_dp_ (x, y)
-       complex(DP), intent(in) :: x
-       real(DP), intent(in)    :: y
-     end function pow_c_r_dp_
-
-     elemental complex(DP) module function pow_c_c_dp_ (x, y)
-       complex(DP), intent(in) :: x
-       complex(DP), intent(in) :: y
-     end function pow_c_c_dp_
-
      ! abs
 
      elemental real(SP) module function abs_c_sp_ (x)
@@ -606,17 +564,6 @@ module crmath
      module procedure sqrt_c_dp_
   end interface cdsqrt
 
-  interface pow
-     module procedure pow_r_r_sp_
-     module procedure pow_r_c_sp_
-     module procedure pow_c_r_sp_
-     module procedure pow_c_c_sp_
-     module procedure pow_r_r_dp_
-     module procedure pow_r_c_dp_
-     module procedure pow_c_r_dp_
-     module procedure pow_c_c_dp_
-  end interface pow
-
   interface abs
      module procedure abs_c_sp_
      module procedure abs_c_dp_
@@ -859,7 +806,6 @@ module crmath
   public :: sqrt
   public :: csqrt
   public :: cdsqrt
-  public :: pow
   public :: abs
   public :: cabs
   public :: cdabs

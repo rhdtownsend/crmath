@@ -68,39 +68,6 @@ contains
 
   !****
 
-  elemental complex(SP) function pow_r_c_sp_ (x, y) result (pow_xy)
-
-    real(SP), intent(in)    :: x
-    complex(SP), intent(in) :: y
-
-    pow_xy = CMPLX(pow(CMPLX(x, KIND=DP), CMPLX(y, KIND=DP)), KIND=SP)
-
-  end function pow_r_c_sp_
-
-  !****
-
-  elemental complex(SP) function pow_c_r_sp_ (x, y) result (pow_xy)
-
-    complex(SP), intent(in) :: x
-    real(SP), intent(in)    :: y
-
-    pow_xy = CMPLX(pow(CMPLX(x, KIND=DP), CMPLX(y, KIND=DP)), KIND=SP)
-
-  end function pow_c_r_sp_
-
-  !****
-
-  elemental complex(SP) function pow_c_c_sp_ (x, y) result (pow_xy)
-
-    complex(SP), intent(in) :: x
-    complex(SP), intent(in) :: y
-
-    pow_xy = CMPLX(pow(CMPLX(x, KIND=DP), CMPLX(y, KIND=DP)), KIND=SP)
-
-  end function pow_c_c_sp_
-
-  !****
-
   elemental real(SP) function abs_c_sp_ (x) result (abs_x)
 
     complex(SP), intent(in) :: x

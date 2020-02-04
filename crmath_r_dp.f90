@@ -184,25 +184,6 @@ contains
 
   !****
 
-  elemental real(DP) function pow_r_r_dp_ (x, y) result (pow_xy)
-
-    real(DP), intent(in) :: x
-    real(DP), intent(in) :: y
-
-    if (x == 0._DP) then
-
-       pow_xy = 0._DP
-
-    else
-
-       pow_xy = exp(log(x)*y)
-
-    end if
-
-  end function pow_r_r_dp_
-
-  !****
-
   elemental real(DP) function hypot_r_r_dp_ (x, y) result (hypot_xy)
 
     real(DP), intent(in) :: x

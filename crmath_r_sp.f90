@@ -78,17 +78,6 @@ contains
 
   !****
 
-  elemental real(SP) function pow_r_r_sp_ (x, y) result (pow_xy)
-
-    real(SP), intent(in) :: x
-    real(SP), intent(in) :: y
-
-    pow_xy = REAL(pow(REAL(x, DP), REAL(y, DP)), SP)
-
-  end function pow_r_r_sp_
-
-  !****
-
   elemental real(SP) function hypot_r_r_sp_ (x, y) result (hypot_xy)
 
     real(SP), intent(in) :: x

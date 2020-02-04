@@ -108,63 +108,6 @@ contains
 
   !****
 
-  elemental complex(DP) function pow_r_c_dp_ (x, y) result (pow_xy)
-
-    real(DP), intent(in)    :: x
-    complex(DP), intent(in) :: y
-
-    if (x == 0._DP) then
-
-       pow_xy = 0._DP
-
-    else
-
-       pow_xy = exp(log(x)*y)
-
-    end if
-
-  end function pow_r_c_dp_
-
-  !****
-
-  elemental complex(DP) function pow_c_r_dp_ (x, y) result (pow_xy)
-
-    complex(DP), intent(in) :: x
-    real(DP), intent(in)    :: y
-
-    if (x == 0._DP) then
-
-       pow_xy = 0._DP
-
-    else
-
-       pow_xy = exp(log(x)*y)
-
-    end if
-
-  end function pow_c_r_dp_
-
-  !****
-
-  elemental complex(DP) function pow_c_c_dp_ (x, y) result (pow_xy)
-
-    complex(DP), intent(in) :: x
-    complex(DP), intent(in) :: y
-
-    if (x == 0._DP) then
-
-       pow_xy = 0._DP
-
-    else
-
-       pow_xy = exp(log(x)*y)
-
-    end if
-
-  end function pow_c_c_dp_
-
-  !****
-
   elemental real(DP) function abs_c_dp_ (x) result (abs_x)
 
     complex(DP), intent(in) :: x
