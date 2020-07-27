@@ -2,9 +2,7 @@
 
 # Variables
 
-F9XC = gfortran
-
-F9XFLAGS =-O2 -fPIC -std=f2008
+include Make.inc
 
 OBJECTS = crmath.o crmath_r_sp.o crmath_c_sp.o crmath_r_dp.o crmath_c_dp.o
 
